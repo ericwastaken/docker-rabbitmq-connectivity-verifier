@@ -7,4 +7,9 @@ services:
     volumes:
       # Mount the secrets directory to the container
       - ./secrets:/app/secrets
+    # For hosts that don't have DNS resolution at the host level, you can use extra_hosts
+    # to map hostnames to IP addresses. The format is "hostname:IP"
+    # Example:
+    # extra_hosts:
+    #   - "rmq-server.yourdomain.com:10.10.10.1"
     restart: no

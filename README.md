@@ -37,6 +37,18 @@ This project requires proper configuration in the `secrets` directory. **Please 
 
 The secrets configuration is critical for the proper functioning of this tool.
 
+## DNS Resolution
+
+If your host doesn't have DNS resolution for the RabbitMQ server hostname, you'll need to use the `extra_hosts` option in the `compose.yml` file. This allows you to map hostnames to IP addresses directly within the container.
+
+To use this feature:
+
+1. Uncomment the `extra_hosts` section in the `compose.yml` file
+2. Replace the example with your actual RabbitMQ server hostname and IP address
+3. The format is `"hostname:IP"` where:
+   - `hostname` is the fully qualified domain name of your RabbitMQ server (e.g., `rmq-server.yourdomain.com`)
+   - `IP` is the IP address of your RabbitMQ server (e.g., `10.10.10.1`)
+
 ## Usage
 
 After you have created your secrets configuration, you can run the RabbitMQ Connectivity Verifier using Docker Compose.
