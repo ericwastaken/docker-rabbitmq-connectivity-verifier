@@ -1,0 +1,10 @@
+# Docker Compose file for RabbitMQ Connectivity Verifier
+# Review the README.md for more information.
+services:
+  rabbitmq-connectivity-verifier:
+    build:
+      context: ./build
+    volumes:
+      # Mount the secrets directory to the container
+      - ./secrets:/app/secrets
+    restart: no

@@ -1,0 +1,9 @@
+FROM --platform=linux/amd64 node:20-alpine as base
+WORKDIR /app
+# Copy package.json and package-lock.json
+COPY . .
+# Install dependencies
+RUN npm install
+
+# Set the startup command to run our script
+CMD [ "node", "script.js" ]
